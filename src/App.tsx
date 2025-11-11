@@ -38,82 +38,44 @@ export default function App() {
   return (
     <div className="bg-white box-border content-stretch flex flex-col items-start relative shadow-[0px_4px_4px_0px_rgba(0,0,0,0.25)] size-full">
       {/* Header */}
-      <div className="absolute bg-white h-[60px] left-[calc(50%-0.5px)] top-0 translate-x-[-50%] w-[1440px] z-50">
-        <div className="absolute content-stretch flex gap-[93px] items-center justify-center left-1/2 top-[8px] translate-x-[-50%]">
-          <a href="/" className="h-[36px] relative shrink-0 w-[103px] transition-opacity hover:opacity-80">
-            <img alt="SoQuin Logo" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgLinkLogo} />
-          </a>
-          
-          {/* Menu */}
-          <div className="content-stretch flex gap-[46px] items-start relative shrink-0">
-            {['SoGlo', 'Digital Banker', 'SoPro', 'SoQuln', 'SoQuin', 'About us'].map((item) => (
-              <a
-                key={item}
-                href={`#${item.toLowerCase().replace(' ', '-')}`}
-                className="content-stretch flex gap-[10px] items-center justify-center relative shrink-0 cursor-pointer transition-all hover:scale-105"
-              >
-                <div className="flex flex-col font-['Aeonik_Pro:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191c1f] text-[14px] text-nowrap hover:text-[#000653]">
-                  <p className="leading-[18.189px] whitespace-pre">{item}</p>
-                </div>
-              </a>
-            ))}
-          </div>
+<header className="absolute top-0 left-0 w-full z-10">
+  <div className="max-w-[1440px] mx-auto flex justify-between items-center px-8 py-6">
+    <img src={imgImgLogo} alt="Logo" className="h-10 w-auto" />
+    <nav className="flex gap-8 text-white text-lg">
+      <a href="#" className="hover:text-gray-300">Features</a>
+      <a href="#" className="hover:text-gray-300">About</a>
+      <a href="#" className="hover:text-gray-300">Contact</a>
+    </nav>
+  </div>
+</header>
 
-          {/* Auth Buttons */}
-          <div className="content-stretch flex gap-[30px] items-center relative shrink-0">
-            <button className="content-stretch flex gap-[10px] items-center justify-center relative shrink-0 cursor-pointer transition-all hover:scale-105">
-              <div className="flex flex-col font-['Aeonik_Pro:Medium',sans-serif] justify-center leading-[0] not-italic relative shrink-0 text-[#191c1f] text-[14px] text-nowrap hover:text-[#000653]">
-                <p className="leading-[18.189px] whitespace-pre">Log in</p>
-              </div>
-            </button>
-            <button className="bg-[#000653] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[10px] relative rounded-[50px] shrink-0 cursor-pointer transition-all hover:scale-105 hover:bg-[#000a7f]">
-              <div className="flex flex-col font-['Aeonik_Pro:Medium',sans-serif] justify-center leading-[0] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[14px] text-nowrap text-white">
-                <p className="leading-[18.189px] overflow-ellipsis overflow-hidden whitespace-pre">Sign up</p>
-              </div>
-            </button>
-          </div>
-        </div>
-      </div>
+{/* Hero Section */}
+<div className="relative w-screen h-screen overflow-hidden">
+  {/* Фон на весь экран */}
+  <img
+    src={imgImgHeroBg}
+    alt=""
+    className="absolute inset-0 w-full h-full object-cover object-center pointer-events-none"
+  />
 
-      {/* Hero Section */}
-      <div className="flex items-center justify-center relative shrink-0">
-        <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-          <div className="h-[937px] overflow-clip relative w-[1441px]">
-            <div className="absolute flex h-[877.333px] items-center justify-center left-1/2 top-[calc(50%+30px)] translate-x-[-50%] translate-y-[-50%] w-[1440px]">
-              <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-                <div className="h-[877.333px] relative w-[1440px]">
-                  <img alt="" className="absolute inset-0 max-w-none object-50%-50% object-cover pointer-events-none size-full" src={imgImgHeroBg} />
-                </div>
-              </div>
-            </div>
-            <div className="absolute content-stretch flex flex-col gap-[42px] items-end left-[254px] top-[102px] w-[967px]">
-              <div className="flex items-center justify-center relative shrink-0">
-                <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-                  <div className="flex flex-col font-['Aeonik_Pro:Medium',sans-serif] justify-center leading-[0] not-italic relative text-[90px] text-white w-[967px]">
-                    <p className="leading-[normal]">Embrace evolution for your money</p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-center relative shrink-0">
-                <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-                  <div className="flex flex-col font-['Aeonik_Pro:Regular',sans-serif] justify-center leading-[0] not-italic relative text-[30px] text-white w-[583px]">
-                    <p className="leading-[1.5]">For those who want more from their money — there's Wix. Sign up for free, in a tap.</p>
-                  </div>
-                </div>
-              </div>
-              <div className="flex items-center justify-center relative shrink-0">
-                <div className="flex-none rotate-[180deg] scale-y-[-100%]">
-                  <button className="bg-[#000653] box-border content-stretch flex gap-[10px] items-center justify-center px-[20px] py-[10px] relative rounded-[50px] cursor-pointer transition-all hover:scale-105 hover:bg-[#000a7f]">
-                    <div className="flex flex-col font-['Aeonik_Pro:Medium',sans-serif] justify-center leading-[0] not-italic overflow-ellipsis overflow-hidden relative shrink-0 text-[16px] text-nowrap text-white">
-                      <p className="leading-[18.189px] overflow-ellipsis overflow-hidden whitespace-pre">Get the app</p>
-                    </div>
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+  {/* Контент по центру */}
+  <div className="absolute inset-0 flex justify-center">
+    <div className="mt-[120px] w-full max-w-[967px] px-6 flex flex-col gap-[42px] items-start text-white">
+      <h1 className="text-[90px] leading-none font-['Aeonik_Pro:Medium',sans-serif]">
+        Embrace evolution for your money
+      </h1>
+
+      <p className="text-[30px] leading-snug font-['Aeonik_Pro:Regular',sans-serif] max-w-[583px]">
+        For those who want more from their money — there’s Wix. Sign up for free, in a tap.
+      </p>
+
+      <button className="bg-[#000653] rounded-[50px] px-[24px] py-[12px] text-[16px] font-['Aeonik_Pro:Medium',sans-serif] transition-all hover:scale-105 hover:bg-[#001080]">
+        Get the app
+      </button>
+    </div>
+  </div>
+</div>
+
 
       {/* Intro Section with Slider */}
       <div className="bg-white relative shrink-0 w-full">
